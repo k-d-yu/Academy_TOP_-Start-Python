@@ -2958,6 +2958,7 @@
 
 import re
 
+
 # s = "Я ищу совпадения в 2023 году. И я их найду в 2 счёта. 9578 19_4 5"
 # reg = r"20*"
 
@@ -3136,3 +3137,96 @@ import re
 # s = "google.com and google.ru"
 # reg = r"(([a-z0-9-]{2,}\.)+[a-z]{2,4})"
 # print(re.sub(reg, r"http://\1", s))
+
+# Рекурсия
+
+# def elevator(n):
+#     if n == 0:
+#         print("Вы в подвале")
+#         return
+#     print("=> ", n)
+#     elevator(n - 1)
+#     print(n, end=" ")
+#
+#
+# n1 = int(input("На каком Вы этаже: "))
+# elevator(n1)
+
+# def sum_list(lst):
+#     res = 0
+#     for i in lst:
+#         res += i
+#     return res
+#
+#
+# print(sum_list([1, 3, 5, 7, 9]))
+
+# def sum_list(lst):
+#     if len(lst) == 1:
+#         print(lst, "=> lst[0]:", lst[0])
+#         return lst[0]
+#     else:
+#         print(lst, "=> lst[0]:", lst[0])
+#         return lst[0] + sum_list(lst[1:])
+#
+#
+# print(sum_list([1, 3, 5, 7, 9]))
+
+
+# def to_str(n, base):
+#     convert = "0123456789ABCDEF"
+#     if n < base:
+#         return convert[n]
+#     else:
+#         return to_str(n // base, base) + convert[n % base]
+#
+#
+# print(to_str(255, 16))
+
+# names = ['Adam', ["Bob", ["Chet", "Cat"], "Bard", "Bert"], 'Alex', ["Bea", "Bill"], 'Ann']
+
+# print(names[0])
+# print(isinstance(names[0], list))
+# print(names[1][1])
+# print(isinstance(names[1][1], list))
+# print(names[1][1][0])
+# print(isinstance(names[1][1][0], list))
+
+
+# def count(lst):
+#     cnt = 0
+#     for i in lst:
+#         if isinstance(i, list):
+#             cnt += count(i)
+#         else:
+#             cnt += 1
+#     return cnt
+#
+#
+# print(count(names))
+
+
+# names = ['Adam', ["Bob", ["Chet", "Cat"], "Bard", "Bert"], 'Alex', ["Bea", "Bill"], 'Ann']
+#
+#
+# def union(s):
+#     if not s:  # s == [] - список пустой
+#         return s
+#     if isinstance(s[0], list):
+#         return union(s[0]) + union(s[1:])
+#     return s[:1] + union(s[1:])
+#
+#
+# print("Выпрямленный список:", union(names))
+
+
+# def remove(text):
+#     if not text:
+#         return ""
+#     if text[0] == "\t" or text[0] == " ":
+#         return remove(text[1:])
+#     else:
+#         return text[0] + remove(text[1:])
+#
+#
+# print(remove("  Hello\tWorld  "))
