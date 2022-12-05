@@ -3350,3 +3350,122 @@ import re
 # f = open("text5.txt", "wb")
 # print(f.write(b"I am learning Python"))
 # f.close()
+
+# with open("text6.txt", "w+") as f:
+#     print(f.write("0123456789"))
+
+# with open("text2.txt", "r") as f:
+#     for line in f:
+#         print(line)
+
+# with open("text6.txt", "r") as f:
+#     for line in f:
+#         print(line[:6])
+
+# file_name = "res.txt"
+# lst = [4.5, 2.8, 3.9, 1.0, 0.3, 4.33, 7.777]
+#
+#
+# def get_line(lt):
+#     lt = list(map(str, lt))
+#     return " ".join(lt)
+#
+#
+# with open(file_name, "w") as f:
+#     f.write(get_line(lst))
+
+# with open(file_name, "r") as f:
+#     nums = f.read()
+# nums = list(map(float, nums.split(" ")))
+# print(nums)
+# print(len(nums))
+
+# def longest_words(file):
+#     with open(file, "r", encoding="utf-8") as text:
+#         w = text.read().split()
+#         max_length = len(max(w, key=len))
+#         res = [word for word in w if len(word) == max_length]
+#         if len(res) == 1:
+#             return res[0]
+#         return res
+#
+#
+# file_name = "res.txt"
+# print(longest_words(file_name))
+
+# text = "Строка №1\nСтрока №2\nСтрока №3\nСтрока №4\nСтрока №5\nСтрока №6\nСтрока №7\nСтрока №8\nСтрока №9\nСтрока №10\n"
+#
+# with open("one.txt", "w") as f:
+#     f.write(text)
+
+# read_file = "one.txt"
+# write_file = "two.txt"
+# with open(read_file, "r") as fr, open(write_file, "w") as fw:
+#     for line in fr:
+#         line = line.replace("Строка", "Линия - ")
+#         fw.write(line)
+
+
+# Модуль OS и OS.PATH
+
+import os
+
+# print("Текущая директория: ", os.getcwd())  # D:\Учеба\Python
+# print(os.listdir())  # возвращает список директорий и файлов, находящихся в текущей директории
+# os.mkdir("folder")  # создает директорию по указанному пути
+# os.makedirs("nested1/nested2/nested3")  # создает промежуточные директории и конечную, указанные в пути, если они не
+# сужествуют. Если конечная директория уже существует, то будет сгенерирована ошибка
+# os.remove("xyz.txt")  # Удаляет файл
+
+# os.rename("nested1", "testt")  # переименовывает файл или директорию
+# os.rename("test.txt", "testt/test1.txt")  # переименовывает файл или директорию, перемещает файлы в существующие
+# директории
+# os.renames("text.txt", "test1/test1.txt")  # переименовывает файл или директорию, создавая промежуточные директории
+# os.rmdir("folder")  # Удаляет пустую директорию
+
+# for root, dirs, files in os.walk("testt", topdown=True):  # возвращает имена объектов в виде дерева директорий. Для
+#     # каждой директории возвращает кортеж (root - путь к директории, dirs - список директорий, files - список файла)
+#     print("Root:", root)
+#     print("  Subdirs:", dirs)
+#     print("  Files:", files)
+
+
+# def remove_empty_dirs(root_tree):
+#     for root, dirs, files in os.walk(root_tree):
+#         if not os.listdir(root):
+#             os.rmdir(root)
+#             print(f"Директория {root} удалена.")
+#
+#
+# remove_empty_dirs("testt")
+
+
+# print(os.path.split(r"D:\Учеба\Python\testt\nested5\test1.txt"))  # разбивает путь на кортеж (head, tail),
+# # tail - последний компонент пути, head - все остальное
+#
+# print(os.path.dirname(r"D:\Учеба\Python\testt\nested5\test1.txt"))  # возвращает имя директории (+ путь)
+# print(os.path.basename(r"D:\Учеба\Python\testt\nested5\test1.txt"))  # возвращает имя файла
+
+# print(os.path.join(r"D:\Учеба", "Python"))
+
+# dirs = ["Work/F1", "Work/F2/F21"]
+#
+# for d in dirs:
+#     os.makedirs(d)
+#
+# files = {"Work": ["w.txt"],
+#          "Work/F1": ["f11.txt", "f12.txt", "f13.txt"],
+#          "Work/F2/F21": ["f211.txt", "f212.txt"]
+#          }
+#
+# for d, file in files.items():
+#     for f in file:
+#         file_pass = os.path.join(d, f)
+#         open(file_pass, "w").close()
+
+# file_text = ["Work/w.txt", "Work/F1/f12.txt", "Work/F2/F21/f211.txt", "Work/F2/F21/f212.txt"]
+# for file in file_text:
+#     with open(file, "w") as f:
+#         f.write(f"Текст для файла по пути {file}.")
+
+
