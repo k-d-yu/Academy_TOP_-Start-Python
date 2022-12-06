@@ -3410,6 +3410,7 @@ import re
 
 import os
 
+
 # print("Текущая директория: ", os.getcwd())  # D:\Учеба\Python
 # print(os.listdir())  # возвращает список директорий и файлов, находящихся в текущей директории
 # os.mkdir("folder")  # создает директорию по указанному пути
@@ -3468,4 +3469,34 @@ import os
 #     with open(file, "w") as f:
 #         f.write(f"Текст для файла по пути {file}.")
 
+
+# def print_tree(root, td):
+#     print(f"Обход {root} {'сверху вниз' if td else 'снизу вверх'}")
+#     for ro, dirs, files in os.walk(root, topdown=td):
+#         print(ro)
+#         print(dirs)
+#         print(files)
+#     print("-" * 20)
+#
+#
+# print_tree("Work", td=False)
+# print_tree("Work", td=True)
+
+# print(os.path.exists(r"D:\Учеба\Python\Work\w.txt"))  # Проверяет наличие файла или папки по указанному пути
+
+# import time
+#
+# path = "one.txt"
+# print(os.path.getatime(path))  # возвращает время последнего доступа к файлу в секундах
+# print(os.path.getctime(path))  # возвращает время создания файла
+# print(os.path.getmtime(path))  # возвращает время последнего изменения файла
+# print(os.path.getsize(path))  # размер файла в байтах
+
+# size = os.path.getsize(path) / 1024
+# print(size)
+# t = os.path.getctime(path)
+# print(time.strftime("%d.%m.%Y, %H:%M:%S", time.localtime(t)))
+
+# print(os.path.isfile(r"Work\w.txt"))  # Возвращает True, если путь является файлом
+# print(os.path.isdir(r"Work"))  # Возвращает True, если путь является папкой
 
